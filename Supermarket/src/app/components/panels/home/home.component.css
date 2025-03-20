@@ -1,0 +1,7 @@
+.abc{
+    position: relative;
+    background-image: url('/assets/images/supermarket.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    font-family: 'Gentium Book Basic', Georgia, 'Times New Roman', Times, serif;
+}

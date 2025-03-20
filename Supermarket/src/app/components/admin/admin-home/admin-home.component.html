@@ -1,0 +1,72 @@
+
+<div class="card-top container-fluid">
+
+    <div class="container d-flex">
+      
+        <div class="item">
+            <a routerLink="/admin/addproduct" title="Add product">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('')">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Fruits and Vegetables')">
+                <i class="fal fa-pumpkin">
+                    Fruits and Vegetables
+                </i>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Milk and Eggs')">
+                <i class="fal fa-cheese">  
+                Milk & Eggs
+                </i>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Meat and Fish')">
+                <i class="fal fa-drumstick">Meat & Fish</i>
+
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Wine and Drinks')">
+                <i class="fal fa-wine-bottle">Wine & Drinks</i>
+            </a>
+        </div>
+        <a class="item ui header teal">
+            <i style="font-size: 30px;" class="fal fa-lemon" routerLink="/"> My supermarket </i>
+        </a>
+    </div>
+   
+</div>
+<p style="text-align: center;">Hello admin</p>
+<div class="container">
+    <div class="row">
+        <ng-container  *ngFor="let item of filterCategory | filter:searchKey:'productName'">
+            <div (click)=editproduct(item) class="card col-md-2">
+                <img [src]="imageUrl + item.Image_path" />
+                <br>
+                <h5>{{item.productName}}</h5>
+                
+                <p>{{item.price}} &nbsp; ₪</p>
+                <div id="related-products-list" class="products-list list-slider grid-3">
+                    <div class="text-center mb-4">
+                    <a class="btn btn-outline-warning mt-3" routerLink="edit" [state]="{item:item}">Edit</a>
+                    <!--  class="quick-view size2 btn" -->
+                  
+                    </div>
+                </div>
+                
+            </div>
+        </ng-container>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
+

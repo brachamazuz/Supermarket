@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h6>Register Yourself!!</h6>
+
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+
+                    <div class="step-1" *ngIf="step==1">
+                        <div class="text-center">
+                            <h6>"STEP 1"</h6>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">* Email address</label>
+                            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">* ID number</label>
+                            <input formControlName="clientID" type="number" class="form-control"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">* Password</label>
+                            <input formControlName="password" type="password" class="form-control"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPasswordConfirm" class="form-label">* Password Confirm</label>
+                            <input formControlName="passwordConfirm" type="password" class="form-control"
+                                id="exampleInputPasswordConfirm">
+                        </div>
+
+
+                        <div style="float: right" class="next" (click)="nextStep()">
+                            <a class="btn btn-outline-warning mt-3"> signUp container &nbsp;<i
+                                    class="far fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <div class="step-2" *ngIf="step!=1">
+                        <div class="text-center">
+                            <h6>"STEP 2"</h6>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="exampleInputPassword1">* City</label>
+                            <select formControlName="city" class="form-select" aria-label="Default select example">
+                                <option selected value="Select city">Select city</option>
+                                <option value="Jerusalem">Jerusalem</option>
+                                <option value="Tel Aviv">Tel Aviv</option>
+                                <option value="Haifa">Haifa</option>
+                                <option value="Rishon Lezion">Rishon Lezion</option>
+                                <option value="Petah Tikva">Petah Tikva</option>
+                                <option value="Ashdod">Ashdod</option>
+                                <option value="Netanya">Netanya</option>
+                                <option value="Bnei Brak">Bnei Brak</option>
+                                <option value="Beer Sheva">Beer Sheva</option>
+                                <option value="Holon">Holon</option>
+
+                            </select>
+                            <!-- <span class="text-danger" *ngIf="signUpForm.controls['usertype'].dirty && signUpForm.hasError('required','usertype')">*User type is required</span> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">* Street</label>
+                            <input formControlName="street" type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">* First Name</label>
+                            <input formControlName="firstname" type="text" class="form-control"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">* Last Name</label>
+                            <input formControlName="lastName" type="text" class="form-control"
+                                id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary mb-2">Sign
+                            up</button>
+                    </div>
+                </form>
+                <a style="color: orange; margin-top: 10px;" routerLink="/login">login</a>
+            </div>
+        </div>
+    </div>
+</div>

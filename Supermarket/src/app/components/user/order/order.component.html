@@ -1,0 +1,112 @@
+<div class="container d-flex">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card1">
+                    <div class="box">
+
+
+                        <div class="container">
+                            <div class="card-table">
+                                <div class="cart-product">
+                                    <table class="table table-ressponsive">
+                                        <thead>
+                                            <tr>
+                                                <th>Sr.No</th>
+                                                <th>Product Name</th>
+                                                <th>Product Image</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of products; let i = index">
+                                                <td>{{i+1}}</td>
+                                                <td>{{item.productName}}</td>
+                                                <td><img style="width: 120px;" [src]="imageUrl + item.Image_path" />
+                                                </td>
+                                                <td>{{item.price | number: '1.2'}} &nbsp; ₪</td>
+                                                <td>{{item.quantity}}</td>
+                                                <td>{{item.total | number: '1.2' }} &nbsp; ₪</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4"></td>
+                                                <td><button routerLink="/user-home/products"
+                                                        class="btn btn-primary">Shop
+                                                        More</button></td>
+                                                <td><strong>Grand Total : {{grandTotal | number: '1.2'}} ₪</strong></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="box">
+                        <div class="text-center">
+                            <h1>order</h1>
+                            <hr>
+                            <h6>shipping details</h6>
+                            <hr>
+                            <div >
+                                <label for="exampleInputPassword1">* City</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected value="Select city">Select city</option>
+                                    <option value="Jerusalem">Jerusalem</option>
+                                    <option value="Tel Aviv">Tel Aviv</option>
+                                    <option value="Haifa">Haifa</option>
+                                    <option value="Rishon Lezion">Rishon Lezion</option>
+                                    <option value="Petah Tikva">Petah Tikva</option>
+                                    <option value="Ashdod">Ashdod</option>
+                                    <option value="Netanya">Netanya</option>
+                                    <option value="Bnei Brak">Bnei Brak</option>
+                                    <option value="Beer Sheva">Beer Sheva</option>
+                                    <option value="Holon">Holon</option>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">* Street</label>
+                                <input type="text" class="form-control"
+                                    id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">shipping date</label>
+                                <input  type="date" class="form-control"
+                                    id="exampleInputPassword1">
+                            </div>
+                            payment:
+                            <hr>
+                            <label>Credit card
+                                <input type="number">
+                            </label>
+                           
+                            <label for="">CVV
+                                <input type="number">
+                            </label> 
+                            <label for="">date
+                                <input type="date">
+                            </label><br>
+
+                            <button type="button" routerLink="/order-finish" class="btn btn-dark">Order</button>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

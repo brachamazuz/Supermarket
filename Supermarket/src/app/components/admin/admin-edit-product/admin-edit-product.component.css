@@ -1,0 +1,22 @@
+.card{
+    width: 700px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: orange;
+    border-radius: 8px;
+}
+
+.card h1,
+h6{
+    color: orange;
+}
+label{
+    color: orange;
+}
+.group{
+
+    padding: 10px;
+}

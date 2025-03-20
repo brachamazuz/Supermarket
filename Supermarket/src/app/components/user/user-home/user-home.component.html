@@ -1,0 +1,31 @@
+<header>
+    <div class="navbar bg-light shadow-sm">
+
+        <button title="cart" routerLink="cart" class="btn btn-primary">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+        Hello {{this.user}}
+        <!-- <p>  Hello {{this.user.loggedInUser?.firstName}}  {{this.user.loggedInUser?.lastName}}</p> -->
+        <!-- <p>"Hello {{this.user.loggedInUser?.firstName}}"</p> -->
+
+        <script> console.log('16') </script>
+        <script> console.log(localStorage) </script>
+
+        <div class="navbar-brand align-item-center d-flex">
+
+            <div class="form-group">
+                <input type="text" class="form-control" (keyup)="search($event)" placeholder="search products">
+                <!-- [(ngModel)]="searchTerm" (keyup)="search($event)" -->
+            </div>
+
+            <span class="fas fa-search search-icon"></span>&nbsp;
+            <a class="item ui header teal">
+                <i style="font-size: 30px;" class="fal fa-lemon" routerLink="/"> My supermarket </i>
+            </a>
+        </div>
+
+
+    </div>
+</header>
+<router-outlet></router-outlet>

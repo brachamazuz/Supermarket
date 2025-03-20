@@ -1,0 +1,61 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Fruits and Vegetables')">
+                <i class="fal fa-pumpkin">                  
+                    Fruits and Vegetables
+                </i>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Milk and Eggs')">
+                <i class="fal fa-cheese">
+                Milk & Eggs
+                </i>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Meat and Fish')">
+                <i class="fal fa-drumstick">Meat & Fish</i>
+
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Wine and Drinks')">
+                <i class="fal fa-wine-bottle">Wine & Drinks</i>
+                
+
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'productName'">
+            <div class="card col-md-2">
+                 <img [src]="imageUrl + item.Image_path" />
+                <br>
+                <div>
+                    <h5>{{item.productName}}</h5>
+                </div>
+                <div>
+                    <p>{{item.price}} &nbsp; ₪</p>
+                </div>
+                <div><button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button></div>
+            </div>
+        </ng-container>
+
+
+
+    </div>
+</div>
+<app-main></app-main>
+<!-- <router-outlet></router-outlet> -->

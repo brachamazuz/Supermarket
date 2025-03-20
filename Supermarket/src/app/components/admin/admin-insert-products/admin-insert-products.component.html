@@ -1,0 +1,53 @@
+
+<div class="container" style="border-color: orange;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="box">
+                    <div class="text-center mb-4">
+                        <h1>Add product</h1>
+
+                    </div>
+                    <form (ngSubmit)="onAdd()" [formGroup]="addProductForm">
+
+                        <div class="form-group">
+                            <label for="exampleInputName">Product name</label>
+                            <input formControlName="productName" type="text" class="form-control"
+                                placeholder="Enter product name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputName">categoryID</label>
+                            <input formControlName="categoryID" type="number" class="form-control"
+                                placeholder="Enter categoryID">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Product price</label>
+                            <input formControlName="price" type="number" class="form-control"
+                                placeholder="Enter Product price">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Missing image</label>
+                            <input formControlName="image" type="text" accept="image/*" (change)="saveImage($event)"
+                                class="form-control" placeholder="Enter image/path">
+                        </div>
+                        <!-- <p>
+                            Author image:
+                            <input #imageControl type="file" accept="image/*" (change)="saveImage($event)"
+                                (blur)="imageBlur()" required />
+                            <span *ngIf="imageVisited && !newProduct.image">Missing image</span>
+                        </p> -->
+
+
+                        <div class="text-center mb-4">
+                            <button type="submit" class="btn btn-primary mt-3">Add product</button>
+                            <button class="btn btn-primary mt-3" (click)="onCancel()">Cancel</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

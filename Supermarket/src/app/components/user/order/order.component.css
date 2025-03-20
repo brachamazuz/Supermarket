@@ -1,0 +1,8 @@
+
+.card{
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    /* top: 20%; */
+    left: 50%;
+}
